@@ -1,8 +1,3 @@
-## sbt project compiled with Scala 3
+## Software-Komponenten von Prof. Dr. Thomas Letschert im WS2020/2021
 
-### Usage
-
-This is a normal sbt project. You can compile code with `sbt compile`, run it with `sbt run`, and `sbt console` will start a Scala 3 REPL.
-
-For more information on the sbt-dotty plugin, see the
-[dotty-example-project](https://github.com/lampepfl/dotty-example-project/blob/master/README.md).
+[Material zur Veranstaltung](https://homepages.thm.de/~hg51/Veranstaltungen/Komponenten-21/SoftwareKomponenten.html).
