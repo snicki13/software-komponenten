@@ -35,7 +35,7 @@ class AlphaBeta[C: Config] {
                 if (newB <= a || successors.tail == Nil)
                     (successors.head, result)
                 else
-                    find_max(successors.tail, otherPlayer, a, b)
+                    find_min(successors.tail, otherPlayer, a, b)
             }
             val (_, result) = player match {
                 case WhitePlayer =>
