@@ -28,6 +28,15 @@ class AlphaBeta[C: Config] {
                 else
                     find_max(successors.tail, otherPlayer, newA, b)
             }
+            def find_min(successors: Seq[C], otherPlayer: Player, a: Int, b: Int): (C, Int) = {
+                val result : Int = alphaBeta(successors.head, otherPlayer, a, b)
+                val newB = if (b.compareTo(result) < 0) b else result
+
+                if (newB <= a || successors.tail == Nil)
+                    (successors.head, result)
+                else
+                    find_max(successors.tail, otherPlayer, a, b)
+            }
             val (_, result) = player match {
                 case WhitePlayer =>
                     find_max(config.successors(WhitePlayer), BlackPlayer, alpha, beta)
@@ -41,12 +50,10 @@ class AlphaBeta[C: Config] {
                         .toSeq
                         .last*/
                 case BlackPlayer =>
-                    find_max(config.successors(BlackPlayer), WhitePlayer, alpha, beta)
+                    find_min(config.successors(BlackPlayer), WhitePlayer, alpha, beta)
                     /*config.successors(BlackPlayer)
                         .map(s => (s, alphaBeta(s, WhitePlayer, alpha, beta)))
-                        .minBy {
-                            case (_, v) => v
-                        }*/
+                        .minBy(_._2)*/
             }
             result
         }
