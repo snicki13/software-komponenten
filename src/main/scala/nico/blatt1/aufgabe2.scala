@@ -1,4 +1,4 @@
-package blatt1
+package nico.blatt1
 
 //Aufgabe 2
 
