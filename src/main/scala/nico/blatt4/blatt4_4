@@ -1,0 +1,2 @@
+Set beinhaltet kein einziges Element doppelt. Wie bei einer sortierten Liste muss dafür etwas über den inhalt bekannt sein. Beim Ausführen von map könnten verbotene Doppelwerte entstehen. Daher ist Set kein Funktor.
+Map erhält zwei Typargumente. Ein FUnktor wäre höchstens alleine auf den Werten möglich (falls das zählt), da keys ebenfalls einzigartig sein müssen
