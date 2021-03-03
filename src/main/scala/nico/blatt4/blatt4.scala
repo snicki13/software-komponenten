@@ -26,7 +26,7 @@ val tree_1 = Node(Leaf(1), Node(Node(Leaf(2), Leaf(3)), Leaf(4)))
 val tree_2 = tree_1.map( _*3 )
 
 
-@main def blatt4: Unit = {
+@main def blatt6_4: Unit = {
     println(tree_1)
     println(tree_2)
 }

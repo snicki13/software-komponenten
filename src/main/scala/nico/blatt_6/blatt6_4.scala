@@ -61,7 +61,7 @@ given ErrorMonad[StringOrDunno, String] with {
 }
 
 //2
-trait EvaluationError[F] {
+/*trait EvaluationError[F] {
     def value: F
 }
 object EvaluationError {
@@ -94,7 +94,7 @@ def eval2[F[_], E: EvaluationError](e: Exp)(using fe: ErrorMonad[F, E]): F[Int] 
                 if (v2 != 0) fe.pure(v1 / v2) else fe.error("Divide by zero")
             )
         )
-}
+}*/
 
 val exp1: Exp =
     Add(Const(18),
@@ -106,8 +106,8 @@ val exp2: Exp =
         Div(
             Mult(Const(12), Const(4)),
             Const(1)))
-val res1 = eval2(exp1)
-val res2 = eval2(exp2)
+val res1 = eval(exp1)
+val res2 = eval(exp2)
 @main def blatt6_4: Unit = {
     println(res1)
     println(res2)
